@@ -16,7 +16,7 @@ to create the docker processes.
 ```
 curl -X POST -H "Content-Type: multipart/form-data" -H "Accept:text/uri-list" -F "file=@test.arff;" -F "estimatorParams=0.5"  -F "searchAlgorithm=local.K2" -F useADTree=0 -F "estimator=SimpleEstimator" -F searchParams='-P 1 -S BAYES' https://yourhostname:8443/weka_rc/algorithm/NaiveBayes
 ```
-and verify that the task is complete using the returned task url. 
+and verify that the task is complete using the returned task url.  
 6. Watch logs at /usr/local/tomcat/logs/*   
 ```
 docker exec -ti weka /bin/bash
