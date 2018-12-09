@@ -1,0 +1,13 @@
+weka:
+  container_name: "weka"
+  build: . 
+  links:
+    - mongodb:mongodb
+  ports:
+    - "8443:8443"
+    - "8080:8080"
+mongodb:
+  image: mongo:latest
+  ports:
+    - "27017:27017"
+  container_name: "mongodb"
