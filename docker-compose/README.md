@@ -10,7 +10,7 @@ docker-compose build
 docker-compose create
 docker-compose start
 ```
-to create the docker processes. 
+to create the docker processes.  
 4. Verify the service https://yourhostname:8443/weka_rc  
 5. Make test post, e.g.  
 ```
