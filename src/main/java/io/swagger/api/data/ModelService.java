@@ -171,6 +171,20 @@ public class ModelService {
         Classifier cls = getClassifier(modelId);
         String arff = DatasetService.getArff(fileInputStream, datasetId, subjectid);
         Instances instances = WekaUtils.instancesFromString(arff, true);
+        // append class index
+        out.append("Instances class index=").append(instances.classIndex()).append(" (should not be -1)\n\n");
+        
+        // append Class Attributes
+        int index = 0;
+        out.append("Class Attributes\n");
+        Enumeration<Object> classAttributesEnumeration = instances.classAttribute().enumerateValues();
+        while(classAttributesEnumeration.hasMoreElements()) {
+            Object element = classAttributesEnumeration.nextElement();
+            out.append(index).append(" => ").append(element).append("\n");
+            index++;
+        }
+        out.append("\n\n");
+        
         for (Instance instance: instances) {
             Double result = cls.classifyInstance(instance);
             out.append(instance).append(",").append(result).append("\n");
