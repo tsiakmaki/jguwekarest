@@ -11,6 +11,7 @@ import weka.core.Instances;
 
 import javax.ws.rs.core.UriInfo;
 import java.io.*;
+import java.util.Enumeration;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
